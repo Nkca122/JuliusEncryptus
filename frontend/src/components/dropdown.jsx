@@ -16,7 +16,8 @@ export default function DropDown(props) {
       <div
         style={{
           width: "100%",
-          backgroundColor: "#f5f5f5"
+          backgroundColor: "#f5f5f5",
+          position: "relative",
         }}
         ref={holderRef}
       >
@@ -29,7 +30,7 @@ export default function DropDown(props) {
             backgroundColor: strokeClr,
             border: `1px solid ${clr}`,
             padding: "var(--padding)",
-            margin: 0
+            margin: 0,
           }}
           className="container"
           onClick={() => {
@@ -37,7 +38,7 @@ export default function DropDown(props) {
             display.classList.toggle("display");
             display.classList.toggle("active");
 
-            setIsActive(prev => !prev);
+            setIsActive((prev) => !prev);
           }}
         >
           <button
@@ -47,20 +48,37 @@ export default function DropDown(props) {
               color: clr,
             }}
           >
-            {!isActive ? <FontAwesomeIcon icon={faPlus} size="2x" /> : <FontAwesomeIcon icon={faMinus} size="2x"/>}
+            {!isActive ? (
+              <FontAwesomeIcon icon={faPlus} size="2x" />
+            ) : (
+              <FontAwesomeIcon icon={faMinus} size="2x" />
+            )}
           </button>
         </div>
-        <p
-          className="display"
-          ref={displayRef}
+        <div
           style={{
-            color: clr,
-            backgroundColor: strokeClr,
-            margin: 0
+            position: "absolute",
+            zIndex: 1,
+            top: "calc(2rem + var(--padding))",
+            backgroundColor: "#f5f5f5",
+            width: "80%",
+            right: '0',
+            borderRadius: '24px',
+            border:`1px solid ${strokeClr}`
           }}
         >
-          {val}
-        </p>
+          <p
+            className="display"
+            ref={displayRef}
+            style={{
+              color: clr,
+              backgroundColor: strokeClr,
+              margin: 0,
+            }}
+          >
+            {val}
+          </p>
+        </div>
       </div>
     </>
   );

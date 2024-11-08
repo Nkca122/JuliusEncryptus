@@ -17,8 +17,17 @@
   padding-inline: var(--padding);
 }
 
+@keyframes drop {
+  from {
+    max-height: 0px;
+  } to {
+    max-height: 400px;
+  }
+}
+
 .active{
-  height: 320px;
+  animation: drop 0.25s ease-in 0s 1;
+  max-height: 400px; overflow: hidden;
   width: 100%;
   padding: var(--padding);
 }
