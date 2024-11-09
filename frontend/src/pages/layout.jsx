@@ -54,6 +54,8 @@ export default function Layout() {
                 style={{
                   fontWeight: 900,
                 }}
+
+                color="#f5f5f5"
               />
             ) : (
               <FontAwesomeIcon
@@ -62,6 +64,8 @@ export default function Layout() {
                 style={{
                   fontWeight: 900,
                 }}
+
+                color="#f5f5f5"
               />
             )}
           </button>
@@ -73,7 +77,7 @@ export default function Layout() {
             <Link to="/">
               Home <FontAwesomeIcon icon={faHouse} />
             </Link>
-            <Link to="/Decoder">
+            <Link to="/decoder">
               Decode <FontAwesomeIcon icon={faPuzzlePiece} />
             </Link>
             <HashLink to="/#about">
