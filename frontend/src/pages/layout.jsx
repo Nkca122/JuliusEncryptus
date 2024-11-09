@@ -35,6 +35,7 @@ export default function Layout() {
             position: "absolute",
             left: "calc(2*var(--padding))",
             top: "calc(2*var(--padding))",
+            zIndex: 1,
           }}
         >
           <button
@@ -54,7 +55,6 @@ export default function Layout() {
                 style={{
                   fontWeight: 900,
                 }}
-
                 color="#f5f5f5"
               />
             ) : (
@@ -64,7 +64,6 @@ export default function Layout() {
                 style={{
                   fontWeight: 900,
                 }}
-
                 color="#f5f5f5"
               />
             )}
@@ -91,6 +90,7 @@ export default function Layout() {
             position: "absolute",
             right: "calc(2*var(--padding))",
             top: "calc(2*var(--padding))",
+            zIndex: 1
           }}
         >
           <FontAwesomeIcon icon={faCircleInfo} size="2x" />

@@ -115,8 +115,17 @@ export default function Home() {
               }}
             >
               Our mission is to decrypt and analyze messages encrypted by the
-              use of a <b>Caesar cipher</b> to uncover any relevant insights
-              that can inform and strengthen our security measures.
+              use of a
+              <b
+                style={{
+                  width: "100%",
+                  textAlign: "center",
+                }}
+              >
+                Caesar cipher
+              </b>{" "}
+              to uncover any relevant insights that can inform and strengthen
+              our security measures.
             </p>
 
             <Link
@@ -179,8 +188,9 @@ export default function Home() {
               ...style.gridItem,
               height: "100%",
               backgroundImage: 'url("/scatter.svg")',
-              backgroundSize: "contain",
+              backgroundSize: "100% auto",
               border: "1px solid #f5f5f5",
+              backgroundRepeat: 'repeat-y'
             }}
           >
             <h1
