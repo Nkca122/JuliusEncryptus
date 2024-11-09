@@ -73,7 +73,7 @@ export default function Layout() {
             <Link to="/">
               Home <FontAwesomeIcon icon={faHouse} />
             </Link>
-            <Link to="/decoder">
+            <Link to="/Decoder">
               Decode <FontAwesomeIcon icon={faPuzzlePiece} />
             </Link>
             <HashLink to="/#about">
