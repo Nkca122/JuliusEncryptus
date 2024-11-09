@@ -120,6 +120,7 @@ export default function Home() {
             </p>
 
             <Link
+              exact
               style={{
                 position: "absolute",
                 bottom: "var(--padding)",
@@ -214,7 +215,7 @@ export default function Home() {
               <b
                 style={{
                   borderBottom: "1px solid #f5f5f5",
-                  fontSize: '1.2rem'
+                  fontSize: "1.2rem",
                 }}
               >
                 Team Members

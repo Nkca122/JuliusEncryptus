@@ -11,7 +11,7 @@ function App() {
     setTimeout(() => {
       setLoading(false);
       let preloader = document.getElementById("preloader");
-      preloader.style.display = 'none'
+      preloader.style.display = "none";
     }, 2500);
   }, []);
 
