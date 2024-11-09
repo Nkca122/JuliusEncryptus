@@ -24,7 +24,7 @@ function App() {
               <Route index element={<Home />} />
             </Route>
             <Route path="/decoder">
-              <Route path="/decoder" element={<Decoder />} />
+              <Route index element={<Decoder />} />
             </Route>
           </Routes>
         </Router>
