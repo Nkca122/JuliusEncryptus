@@ -22,6 +22,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
+            </Route>
+            <Route path="/decoder">
               <Route path="/decoder" element={<Decoder />} />
             </Route>
           </Routes>
