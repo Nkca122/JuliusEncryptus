@@ -20,11 +20,9 @@ function App() {
       {!loading ? (
         <Router>
           <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route exact path="/" element={<Layout />}>
               <Route index element={<Home />} />
-            </Route>
-            <Route path="/decoder">
-              <Route index element={<Decoder />} />
+              <Route path="/decoder" element={<Decoder />} />
             </Route>
           </Routes>
         </Router>
