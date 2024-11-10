@@ -18,7 +18,7 @@
 }
 
 .active{
-  min-height: 320px;
+  height: fit-content;
   width: 100%;
   padding: var(--padding);
 }
@@ -67,19 +67,19 @@
   height: auto; width: max-content;
   transition: height 0.25s linear;
   position: absolute;
-  background-color: #242424;
+  background-color: #f5f5f5;
   padding: var(--padding) calc(2*var(--padding)) 0 calc(2*var(--padding));
   display: flex; flex-direction: column;
   border: 1px solid #f5f5f5;
-  left: 100%;
-  top: 0;
+  right: calc(100% + var(--padding));
+  top: var(--padding);
+  border: 1px solid #000;
 }
 
 .menu-active a{
   width: 100%;
-  color: #f5f5f5;
+  color: #000;
   display: block;
-  border-bottom: 1px solid #3c3c3c;
   margin-bottom: var(--padding);
 }
 
@@ -88,7 +88,7 @@
   height: 0;
 }
 
-#typewriter span{
+.typewriter span{
   font-family: inherit;
 }
 
@@ -106,16 +106,19 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  margin-bottom: calc(var(--padding) * 2);
 }
 
-.top-trianglesvg {
+.top-triangle svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
   height: 150px;
+  stroke: #3c3c3c;
+  stroke-width: 2px;
 }
 
-.top-triangle.shape-fill {
+.top-triangle .shape-fill {
   fill: #000000;
 }
 
@@ -124,6 +127,7 @@
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+  margin-top: calc(var(--padding) * 2);
 }
 
 .bottom-triangle svg {
@@ -131,6 +135,8 @@
   display: block;
   width: calc(100% + 1.3px);
   height: 150px;
+  stroke: #3c3c3c;
+  stroke-width: 2px;
 }
 
 .bottom-triangle .shape-fill {
@@ -149,6 +155,89 @@
 
 #preloader svg{
   fill: #f5f5f5;
-  height: 50%;
+  height: 10%;
   aspect-ratio: 1 / 1;
+}
+
+.card-grid {
+  display: grid; width: 100%; grid-template-columns: repeat(auto-fit, 286px);
+  justify-content: center;
+  gap: 1em;
+}
+
+.card-div {
+  height: 385px; width: 286px;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+
+  border-radius: 16px; background-color: #242628;
+
+  transition: all 0.2s linear;
+
+  border: 1px solid #000;
+
+  color: #f5f5f5;
+  box-shadow: 2px 0 0 #000, 4px 0 0 #000, 6px 0 0 #000;
+}
+
+.card-div:hover .card-img{
+  transform: scale(1.05);
+}
+
+.card-div h3 {
+  font-size: 1.5rem;
+  padding-inline: var(--padding);
+  text-align: right;
+
+  width: 100%;
+  text-shadow: 2px 0 0 #000, 4px 0 0 #000, 6px 0 0 #000;
+
+  padding: var(--padding);
+
+  border-radius: 24px;
+}
+
+
+
+.card-img{
+  width: 100%; height: 40%; border: 1px solid #f5f5f5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+  border-radius: 24px;
+
+  transition: all 0.2s linear;
+}
+
+.card-description {
+  width: 100%;
+  margin-top: var(--padding);
+}
+
+.card-description p{
+  font-size: 0.85rem; line-height: 1.05em;
+  text-align: left;
+}
+
+
+.card-link {
+  width: 100%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.card-link p {
+  color: blue; font-size: 0.85rem; text-align: center; margin: var(--padding);
+}
+
+.card-link p::after {
+  content: ">>"; display: inline;
+  font-size: 0.9rem;
+  color: blue;
+  margin-left: calc(var(--padding)/4);
+}
+
+.card-link p:hover {
+  font-weight: 700;
 }

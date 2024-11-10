@@ -5,7 +5,7 @@ import axios from "axios";
 import Chart from "chart.js/auto";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { ExpressError } from "../assets/error";
+import { ExpressError } from "../assets/js/error";
 
 const style = {
   grid: {
@@ -131,7 +131,7 @@ export default function Decoder() {
       options: {
         plugins: {
           customCanvasBackgroundColor: {
-            color: "#242424",
+            color: "#242628",
           },
         },
       },
@@ -178,7 +178,7 @@ export default function Decoder() {
         options: {
           plugins: {
             customCanvasBackgroundColor: {
-              color: "#242424",
+              color: "#242628",
             },
           },
         },
@@ -198,7 +198,7 @@ export default function Decoder() {
           alignItems: "center",
           justifyContent: "center",
           background:
-            "linear-gradient(90deg, #3C3C3C  1px, transparent 1px) 0 0, linear-gradient(180deg, #3C3C3C  1px, transparent 1px) 0 0",
+            "linear-gradient(90deg, #776b59  1px, transparent 1px) 0 0, linear-gradient(180deg, #776b59  1px, transparent 1px) 0 0, #1d1f20",
           backgroundSize: "60px 60px",
           border: "1px solid #3C3C3C",
           boxShadow:
@@ -213,7 +213,7 @@ export default function Decoder() {
               ...style.gridItem,
               borderRadius: "24px",
               border: "1px solid #f5f5f5",
-              backgroundColor: "#242424",
+              backgroundColor: "#242628",
               boxShadow:
                 "4px 4px 0 black, 6px 6px 0 rgba(0, 0, 0, 0.8), 8px 8px 0 rgba(0, 0, 0, 0.6)",
             }}
@@ -266,16 +266,18 @@ export default function Decoder() {
                         position: "absolute",
                         height: "100%",
                         width: "100%",
-                        backgroundColor: "#242424",
+                        backgroundColor: "#232526",
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
+                        borderRadius: "24px",
                       }}
                     >
                       <div
                         style={{
                           height: "50%",
                           aspectRatio: "1/1",
+                          borderRadius: "24px",
                         }}
                       >
                         <FontAwesomeIcon
@@ -296,13 +298,14 @@ export default function Decoder() {
                     style={{
                       width: "100%",
                       height: "400px",
-                      backgroundColor: "#242424",
+                      backgroundColor: "transparent",
                       border: "none",
                       padding: "var(--padding)",
                       color: "#f5f5f5",
                       fontSize: "1rem",
                       fontWeight: 900,
                       textAlign: "left",
+                      borderRadius: "24px",
                     }}
                     value={text}
                     placeholder="Enter Your Cipher Here...."
@@ -313,26 +316,31 @@ export default function Decoder() {
                   <div
                     style={{
                       display: "block",
-                      width: "100%",
+                      width: "fit-content",
                       position: "absolute",
-                      bottom: 0,
+                      bottom: "var(--padding)",
+                      
                     }}
                   >
                     {!fetch ? (
                       <button
                         style={{
                           backgroundColor: "transparent",
-                          border: "none",
                           display: "block",
                           width: "100%",
                           textAlign: "end",
-                          borderTop: "1px solid #f5f5f5",
+                          border: "none",
                         }}
                       >
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          color={"#f5f5f5"}
+                          color="#f5f5f5"
                           size="2x"
+                          style={{
+                            padding: "var(--padding)",
+                            border: "1px solid #f5f5f5",
+                            borderRadius: "50%",
+                          }}
                         />
                       </button>
                     ) : null}
@@ -341,7 +349,7 @@ export default function Decoder() {
               </div>
             </form>
           </div>
-          <div style={style.gridItem}>
+          <div style={{ ...style.gridItem, backgroundColor: "transparent" }}>
             {response ? (
               <DropMenu response={response} />
             ) : (
@@ -366,6 +374,7 @@ export default function Decoder() {
             <canvas
               id="english"
               style={{
+                backgroundColor: "#242628",
                 borderRadius: "24px",
                 boxShadow:
                   "4px 4px 0 black, 6px 6px 0 rgba(0, 0, 0, 0.8), 8px 8px 0 rgba(0, 0, 0, 0.6)",
@@ -384,7 +393,7 @@ export default function Decoder() {
             <canvas
               id="solutions"
               style={{
-                backgroundColor: "#242424",
+                backgroundColor: "#242628",
                 borderRadius: "24px",
                 boxShadow:
                   "4px 4px 0 black, 6px 6px 0 rgba(0, 0, 0, 0.8), 8px 8px 0 rgba(0, 0, 0, 0.6)",

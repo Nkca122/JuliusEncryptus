@@ -33,9 +33,17 @@ export default function Layout() {
         <div
           style={{
             position: "absolute",
-            left: "calc(2*var(--padding))",
+            right: "calc(2*var(--padding) + 4rem)",
             top: "calc(2*var(--padding))",
+            height: "2rem",
+            width: "2rem",
             zIndex: 1,
+            border: "1px solid #f5f5f5",
+            borderRadius: "50%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: '#f5f5f5'
           }}
         >
           <button
@@ -44,27 +52,27 @@ export default function Layout() {
             }}
             style={{
               background: "none",
-              border: "none",
               color: "#f5f5f5",
+              border: "none",
             }}
           >
             {mActive ? (
               <FontAwesomeIcon
                 icon={faXmark}
-                size="2x"
+                size="1x"
                 style={{
                   fontWeight: 900,
                 }}
-                color="#f5f5f5"
+                color="#000"
               />
             ) : (
               <FontAwesomeIcon
                 icon={faBars}
-                size="2x"
+                size="1x"
                 style={{
                   fontWeight: 900,
                 }}
-                color="#f5f5f5"
+                color="#000"
               />
             )}
           </button>
@@ -90,7 +98,7 @@ export default function Layout() {
             position: "absolute",
             right: "calc(2*var(--padding))",
             top: "calc(2*var(--padding))",
-            zIndex: 1
+            zIndex: 1,
           }}
         >
           <FontAwesomeIcon icon={faCircleInfo} size="2x" />

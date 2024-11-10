@@ -17,23 +17,31 @@ export default function DropDown(props) {
         style={{
           width: "100%",
           borderRadius: "24px",
+          backgroundColor: strokeClr,
+          border: `1px solid #242424`,
+          margin: 0,
+          position: "relative",
+          minHeight: "calc(2rem + 2*(var(--padding)))",
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
         }}
         ref={holderRef}
       >
         <div
           style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            backgroundColor: strokeClr,
-            border: `1px solid ${clr}`,
+            background: "#06609b",
+            border: "none",
+            color: clr,
             padding: "var(--padding)",
-            margin: 0,
-            borderRadius: "24px",
+            borderRadius: "24px 0 0 24px",
+            position: "absolute",
+            height: "100%",
+            top: 0,
+            left: 0,
+            width: '60px'
           }}
-          className="container"
-          onClick={() => {
+          onClick={(e) => {
             let display = displayRef.current;
             display.classList.toggle("display");
             display.classList.toggle("active");
@@ -41,33 +49,29 @@ export default function DropDown(props) {
             setIsActive((prev) => !prev);
           }}
         >
-          <button
+          {!isActive ? (
+            <FontAwesomeIcon icon={faPlus} size="2x" />
+          ) : (
+            <FontAwesomeIcon icon={faMinus} size="2x" />
+          )}
+        </div>
+
+        <div style={{ maxWidth: "calc(100% - 62px)" }}>
+          <p
+            className="display"
+            ref={displayRef}
             style={{
-              background: "none",
-              border: "none",
               color: clr,
+              backgroundColor: strokeClr,
+              borderRadius: "24px",
+              margin: 0,
+              overflow: "scroll",
+              width: "100%",
             }}
           >
-            {!isActive ? (
-              <FontAwesomeIcon icon={faPlus} size="2x" />
-            ) : (
-              <FontAwesomeIcon icon={faMinus} size="2x" />
-            )}
-          </button>
+            {val}
+          </p>
         </div>
-        <pre
-          className="display"
-          ref={displayRef}
-          style={{
-            color: clr,
-            backgroundColor: strokeClr,
-            borderRadius: "24px",
-            margin: 0,
-            overflow: 'scroll'
-          }}
-        >
-          {val}
-        </pre>
       </div>
     </>
   );

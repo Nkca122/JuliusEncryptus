@@ -1,5 +1,6 @@
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
+import Card from "../components/card";
 import { useEffect, useState } from "react";
 
 const style = {
@@ -26,6 +27,7 @@ export default function Home() {
             "linear-gradient(to right, #3c3c3c 1px, transparent 1px) 0 0, linear-gradient(to bottom, #3c3c3c 1px, transparent 1px) 0 0, #000",
           backgroundSize: "120px 120px, 120px 120px",
           backgroundRepeat: "repeat, repeat",
+          paddingBlock: "calc(var(--padding)*7)",
         }}
       >
         <div
@@ -60,7 +62,7 @@ export default function Home() {
                   left: 0,
                   height: "156px",
                 }}
-                id="typewriter"
+                className="typewriter"
               >
                 <Typewriter
                   words={["Julius Encryptus"]}
@@ -113,7 +115,6 @@ export default function Home() {
                 alignItems: "center",
                 flexDirection: "column",
               }}
-
               className="container"
             >
               Our mission is to decrypt and analyze messages encrypted by the
@@ -131,7 +132,6 @@ export default function Home() {
             </p>
 
             <Link
-              exact
               style={{
                 position: "absolute",
                 bottom: "var(--padding)",
@@ -158,10 +158,16 @@ export default function Home() {
       <section
         style={{
           border: "1px solid #3c3c3c",
+          background:
+            "linear-gradient(to right, #a89c8a 1px, transparent 1px) 0 0, linear-gradient(to bottom, #a89c8a 1px, transparent 1px) 0 0, #242424",
+          backgroundSize: "120px 120px, 120px 120px",
+          backgroundRepeat: "repeat, repeat",
+          marginTop: "var(--padding)",
+          paddingBlock: "calc(var(--padding)*7)",
         }}
         id="about"
       >
-        <div className="top-triangle">
+        {/* <div className="top-triangle">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -173,101 +179,68 @@ export default function Home() {
               className="shape-fill"
             ></path>
           </svg>
-        </div>
+        </div> */}
 
         <div
           style={{
             width: "100%",
-            height: "100%",
-            display: "grid",
-            gap: "1em",
-            gridTemplateColumns: "repeat(auto-fit, 400px)",
+            display: "flex",
             justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <div
+          <span
             style={{
-              ...style.gridItem,
-              height: "100%",
-              backgroundImage: 'url("/scatter.svg")',
-              backgroundSize: "100% auto",
-              border: "1px solid #f5f5f5",
-              backgroundRepeat: 'repeat-y'
+              fontSize: "3rem",
+              padding: "var(--padding)",
+              margin: "0 0 var(--padding) 0",
+              backgroundColor: "#242424",
+              border: "0.1px solid #f5f5f5",
+              borderRadius: "3rem",
+              fontFamily: '"Orbitron", sans-serif',
+              boxShadow: "2px 2px 0 #000, 4px 4px 0 #000, 6px 6px 0 #000",
+              height: "106.5px",
             }}
+            className="typewriter"
           >
-            <h1
-              style={{
-                fontSize: "3rem",
-              }}
-            >
-              ABOUT US
-            </h1>
-          </div>
-
-          <div
-            style={{
-              ...style.gridItem,
-              height: "100%",
-              border: "1px solid #f5f5f5",
-            }}
-          >
-            <p
-              style={{
-                height: "100%",
-                width: "100%",
-                textAlign: "left",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#f5f5f5",
-              }}
-              className="container"
-            >
-              <b
-                style={{
-                  borderBottom: "1px solid #f5f5f5",
-                  fontSize: "1.2rem",
-                }}
-              >
-                Team Members
-              </b>
-              <a
-                href="https://www.linkedin.com/in/satyam-kumar-kesarwani-763b61293/"
-                style={{
-                  color: "#f5f5f5",
-                }}
-              >
-                <b>Satyam Kesarwani</b>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nikunj-chauhan-9781832b2/"
-                style={{
-                  color: "#f5f5f5",
-                }}
-              >
-                Nikunj Chauhan
-              </a>
-              <a
-                href="https://www.linkedin.com/in/sarafaraj-nasardi-7722b31b3/"
-                style={{
-                  color: "#f5f5f5",
-                }}
-              >
-                Sarafaraj Nasardi
-              </a>
-              <a
-                href="https://www.linkedin.com/in/vidhi-mittal04/"
-                style={{
-                  color: "#f5f5f5",
-                }}
-              >
-                Vidhi Mittal
-              </a>
-            </p>
-          </div>
+            <Typewriter
+              words={["About Us", "Our Team"]}
+              loop
+              cursor
+              cursorStyle=""
+              typeSpeed={100}
+              deleteSpeed={150}
+              delaySpeed={1000}
+            />
+          </span>
         </div>
 
+        <div className="card-grid">
+          <Card
+            heading="Team Lead"
+            description="Satyam Kesarwani"
+            link="https://www.linkedin.com/in/satyam-kumar-kesarwani-763b61293/"
+          />
+
+          <Card
+            heading="Lead Developer"
+            description="Nikunj Chauhan"
+            link="https://www.linkedin.com/in/nikunj-chauhan-9781832b2/"
+          />
+
+          <Card
+            heading="Lead Tester"
+            description="Sarafaraj Nasardi"
+            link="https://www.linkedin.com/in/sarafaraj-nasardi-7722b31b3/"
+          />
+
+          <Card
+            heading="Designer"
+            description="Vidhi Mittal"
+            link="https://www.linkedin.com/in/vidhi-mittal04/"
+          />
+        </div>
+        {/* 
         <div className="bottom-triangle">
           <svg
             data-name="Layer 1"
@@ -280,7 +253,7 @@ export default function Home() {
               className="shape-fill"
             ></path>
           </svg>
-        </div>
+        </div> */}
       </section>
     </>
   );
