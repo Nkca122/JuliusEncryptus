@@ -38,7 +38,13 @@ app.post("/", (req, res, next) => {
   }
 });
 
-app.all("*", (req, res, next) => {
+app.get("*", (req, res, next) => {
+  return next(
+    new ExpressError(process.env.ERR_BAD_METHOD, "ERR_BAD_METHOD", 400)
+  );
+});
+
+app.post("*", (req, res, next) => {
   return next(
     new ExpressError(process.env.ERR_BAD_METHOD, "ERR_BAD_METHOD", 400)
   );
