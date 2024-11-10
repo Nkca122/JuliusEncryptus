@@ -120,7 +120,7 @@ export default function Decoder() {
         labels: Object.keys(englishFreq),
         datasets: [
           {
-            label: "% of occurence of english charactera",
+            label: "% of occ. of English Characters",
             data: Object.keys(freqAnalysis).map((key) => freqAnalysis[key]),
             backgroundColor: "#fae27a",
             borderColor: "#d4a017",
