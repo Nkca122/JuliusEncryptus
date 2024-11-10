@@ -5,6 +5,7 @@ import axios from "axios";
 import Chart from "chart.js/auto";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { ExpressError } from "../assets/error";
 
 const style = {
   grid: {
@@ -236,7 +237,12 @@ export default function Decoder() {
                     setResponse(res.data.body);
                   })
                   .catch((err) => {
-                    setErr(err);
+                    let axiosErr = new ExpressError(
+                      err.message || "Something, Went Wrong",
+                      err.code,
+                      err.status
+                    );
+                    setErr(axiosErr);
                     setFetch(false);
                   });
                 event.preventDefault();

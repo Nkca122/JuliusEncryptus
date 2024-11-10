@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight, faKeyboard } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 export default function Error(props) {
-  let err = props.err;
+  let err = props.err; console.log(err);
   useEffect(() => {
     console.log(err);
     window.addEventListener("keypress", (e) => {
@@ -190,17 +190,7 @@ l-29 -44 40 -40 39 -41 0 -177 0 -178 -545 0 -545 0 0 179 0 178 25 19 c14 10
               fontWeight: 900,
             }}
           >
-            {err.status != 404
-              ? err.response
-                ? err.response.data.code
-                : "ERR"
-              : "WRONG_ROUTE"}
-            {" : "}
-            {err.status != 404
-              ? err.response
-                ? err.response.data.msg.toUppercase()
-                : err.message.toUpperCase()
-              : "This Route Doesn't Exist"}
+           {err.code} : {err.msg}
           </p>
           <p>
             Press Any Key on the <FontAwesomeIcon icon={faKeyboard} />

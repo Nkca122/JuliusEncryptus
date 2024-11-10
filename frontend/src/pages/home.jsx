@@ -113,6 +113,8 @@ export default function Home() {
                 alignItems: "center",
                 flexDirection: "column",
               }}
+
+              className="container"
             >
               Our mission is to decrypt and analyze messages encrypted by the
               use of a
@@ -123,7 +125,7 @@ export default function Home() {
                 }}
               >
                 Caesar cipher
-              </b>{" "}
+              </b>
               to uncover any relevant insights that can inform and strengthen
               our security measures.
             </p>

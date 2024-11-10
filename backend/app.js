@@ -26,13 +26,9 @@ app.post("/", (req, res, next) => {
       )
     );
   else {
-    if (typeof (req.body.cipher) != "string")
+    if (typeof(req.body.cipher) != "string")
       return next(
-        new ExpressError(
-          process.env.ERR_BAD_REQUEST,
-          "ERR_BAD_REQUEST",
-          500
-        )
+        new ExpressError(process.env.ERR_BAD_REQUEST, "ERR_BAD_REQUEST", 500)
       );
     else {
       return res.send({
@@ -42,8 +38,14 @@ app.post("/", (req, res, next) => {
   }
 });
 
+app.all("*", (req, res, next) => {
+  return next(
+    new ExpressError(process.env.ERR_BAD_METHOD, "ERR_BAD_METHOD", 400)
+  );
+});
+
 app.use((err, req, res, next) => {
-  console.log(err.msg)
+  console.log(err);
   res.status(err.status || 500).send(err);
 });
 
