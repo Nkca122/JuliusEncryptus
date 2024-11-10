@@ -102,46 +102,6 @@
   color: #000;
 }
 
-.top-triangle{
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  margin-bottom: calc(var(--padding) * 2);
-}
-
-.top-triangle svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 150px;
-  stroke: #3c3c3c;
-  stroke-width: 2px;
-}
-
-.top-triangle .shape-fill {
-  fill: #000000;
-}
-
-.bottom-triangle {
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-  margin-top: calc(var(--padding) * 2);
-}
-
-.bottom-triangle svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 150px;
-  stroke: #3c3c3c;
-  stroke-width: 2px;
-}
-
-.bottom-triangle .shape-fill {
-  fill: #000000;
-}
 
 #preloader {
   width: 100vw;
@@ -178,16 +138,18 @@
 
   color: #f5f5f5;
   box-shadow: 2px 0 0 #000, 4px 0 0 #000, 6px 0 0 #000;
+  transition: all 0.25s linear;
 }
 
-.card-div:hover .card-img{
-  transform: scale(1.05);
+.card-div:hover{
+  transform: scale(1.025);
+  transition: all 0.25s ease-in;
 }
 
 .card-div h3 {
   font-size: 1.5rem;
   padding-inline: var(--padding);
-  text-align: right;
+  text-align: center;
 
   width: 100%;
   text-shadow: 2px 0 0 #000, 4px 0 0 #000, 6px 0 0 #000;
@@ -200,15 +162,10 @@
 
 
 .card-img{
-  width: 100%; height: 40%; border: 1px solid #f5f5f5;
-  background-size: cover;
+  height:160px; aspect-ratio: 1/1; border: 1px solid #f5f5f5; border-radius: 50%;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-
-
-  border-radius: 24px;
-
-  transition: all 0.2s linear;
 }
 
 .card-description {
@@ -218,7 +175,7 @@
 
 .card-description p{
   font-size: 0.85rem; line-height: 1.05em;
-  text-align: left;
+  text-align: center;
 }
 
 

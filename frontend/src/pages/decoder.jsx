@@ -120,7 +120,7 @@ export default function Decoder() {
         labels: Object.keys(englishFreq),
         datasets: [
           {
-            label: "Frequency of English Alphabets",
+            label: "% of occurence of english charactera",
             data: Object.keys(freqAnalysis).map((key) => freqAnalysis[key]),
             backgroundColor: "#fae27a",
             borderColor: "#d4a017",
@@ -325,7 +325,7 @@ export default function Decoder() {
                     {!fetch ? (
                       <button
                         style={{
-                          backgroundColor: "transparent",
+                          backgroundColor: "#232526",
                           display: "block",
                           width: "100%",
                           textAlign: "end",

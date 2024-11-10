@@ -25,6 +25,7 @@ export default function DropDown(props) {
           display: "flex",
           justifyContent: "flex-end",
           alignItems: "center",
+          overflowX: "hidden",
         }}
         ref={holderRef}
       >
@@ -39,7 +40,7 @@ export default function DropDown(props) {
             height: "100%",
             top: 0,
             left: 0,
-            width: '60px'
+            width: "60px",
           }}
           onClick={(e) => {
             let display = displayRef.current;

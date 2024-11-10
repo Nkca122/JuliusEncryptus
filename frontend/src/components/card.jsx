@@ -6,7 +6,7 @@ export default function Card(props) {
   return (
     <>
       {link ? (
-        <a href={link}>
+        <a href={link} target="main">
           <div className="card-div container">
             {heading ? <h3>{heading}</h3> : null}
             {imgSrc ? (

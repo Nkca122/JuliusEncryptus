@@ -1,6 +1,7 @@
 import DropDown from "./dropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { v4 as uuid } from "uuid";
 export default function DropMenu(props) {
   let items = props.response;
   return (
@@ -19,6 +20,7 @@ export default function DropMenu(props) {
           overflowY: "scroll",
           boxShadow:
             "4px 4px 0 black, 6px 6px 0 rgba(0, 0, 0, 0.8), 8px 8px 0 rgba(0, 0, 0, 0.6)",
+          overflowX: "hidden",
         }}
       >
         {!items[0].length && !items[1].length ? (
@@ -64,7 +66,7 @@ export default function DropMenu(props) {
                   val={item}
                   clr="#f5f5f5"
                   strokeClr="#2b9b06"
-                  key={item}
+                  key={uuid()}
                 />
               );
             })}
@@ -82,7 +84,8 @@ export default function DropMenu(props) {
                 }}
                 className="container"
               >
-                <FontAwesomeIcon icon={faXmark} size="3x" /> <b>Potentially Wrong</b>
+                <FontAwesomeIcon icon={faXmark} size="3x" />{" "}
+                <b>Potentially Wrong</b>
               </h5>
             ) : null}
 
@@ -92,7 +95,7 @@ export default function DropMenu(props) {
                   val={item}
                   clr="#ffffff"
                   strokeClr="#9b0606"
-                  key={item}
+                  key={uuid()}
                 />
               );
             })}

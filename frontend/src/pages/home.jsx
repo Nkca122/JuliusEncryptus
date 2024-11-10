@@ -167,19 +167,6 @@ export default function Home() {
         }}
         id="about"
       >
-        {/* <div className="top-triangle">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M1200 0L0 0 598.97 114.72 1200 0z"
-              className="shape-fill"
-            ></path>
-          </svg>
-        </div> */}
 
         <div
           style={{
@@ -219,24 +206,28 @@ export default function Home() {
           <Card
             heading="Team Lead"
             description="Satyam Kesarwani"
+            img='/satyam.png'
             link="https://www.linkedin.com/in/satyam-kumar-kesarwani-763b61293/"
           />
 
           <Card
             heading="Lead Developer"
             description="Nikunj Chauhan"
-            link="https://www.linkedin.com/in/nikunj-chauhan-9781832b2/"
+            img='/nikunj.png'
+            link="https://github.com/Nkca122"
           />
 
           <Card
             heading="Lead Tester"
             description="Sarafaraj Nasardi"
+            img ='/sarafaraj.png'
             link="https://www.linkedin.com/in/sarafaraj-nasardi-7722b31b3/"
           />
 
           <Card
-            heading="Designer"
+            heading="Lead Designer"
             description="Vidhi Mittal"
+            img='/vidhi.png'
             link="https://www.linkedin.com/in/vidhi-mittal04/"
           />
         </div>
