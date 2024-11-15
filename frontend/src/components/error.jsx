@@ -2,7 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotateRight, faKeyboard } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 export default function Error(props) {
-  let err = props.err; console.log(err);
+  let err = props.err;
+  console.log(err);
   useEffect(() => {
     console.log(err);
     window.addEventListener("keypress", (e) => {
@@ -16,13 +17,13 @@ export default function Error(props) {
           position: "fixed",
           top: 0,
           left: 0,
-          zIndex: 2,
           width: "100%",
           height: "100%",
           backdropFilter: "blur(10px)",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          zIndex: 20,
         }}
       >
         <div
@@ -70,11 +71,10 @@ export default function Error(props) {
             height="183.000000pt"
             viewBox="0 0 275.000000 183.000000"
             preserveAspectRatio="xMidYMid meet"
-
             style={{
-              width: '40%',
-              height: 'auto',
-              filter: 'invert(100)'
+              width: "40%",
+              height: "auto",
+              filter: "invert(100)",
             }}
           >
             <g
@@ -190,7 +190,7 @@ l-29 -44 40 -40 39 -41 0 -177 0 -178 -545 0 -545 0 0 179 0 178 25 19 c14 10
               fontWeight: 900,
             }}
           >
-           {err.code} : {err.msg}
+            {err.code} : {err.msg}
           </p>
           <p>
             Press Any Key on the <FontAwesomeIcon icon={faKeyboard} />

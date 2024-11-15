@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { faXmark} from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
+import Infograph from "./infographic";
 
 export default function DropDown(props) {
   let displayRef = useRef(null);
@@ -10,69 +11,68 @@ export default function DropDown(props) {
   let clr = props.clr;
   let strokeClr = props.strokeClr;
   let val = props.val;
+  let status = props.status;
 
   return (
     <>
+    {isActive ? <Infograph data ={val} status={status}/> : null}
+    {isActive ? <button style={{
+      position: 'fixed',
+      top: 'calc(var(--padding)*2 + 5%)',
+      right: 'calc(var(--padding)*2 + 5%)',
+      zIndex: 22,
+      background: 'none', 
+      border: 'none',
+    }} onClick={()=>{
+      setIsActive(false);
+    }}>
+      <FontAwesomeIcon icon={faXmark} size={'4x'} color={status == 'correct' ? 'green' : 'red'}/>
+    </button>: null}
       <div
         style={{
-          width: "100%",
+          width: "95%",
+          minHeight: "60px",
+          backgroundColor: "#242424",
+          border: `1px solid ${strokeClr}`,
+          marginBottom: "var(--padding)",
+          padding: "var(--padding)",
           borderRadius: "24px",
-          backgroundColor: strokeClr,
-          border: `1px solid #242424`,
-          margin: 0,
-          position: "relative",
-          minHeight: "calc(2rem + 2*(var(--padding)))",
-          display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "center",
-          overflowX: "hidden",
-        }}
-        ref={holderRef}
-      >
-        <div
-          style={{
-            background: "#06609b",
-            border: "none",
-            color: clr,
-            padding: "var(--padding)",
-            borderRadius: "24px 0 0 24px",
-            position: "absolute",
-            height: "100%",
-            top: 0,
-            left: 0,
-            width: "60px",
-          }}
-          onClick={(e) => {
-            let display = displayRef.current;
-            display.classList.toggle("display");
-            display.classList.toggle("active");
 
-            setIsActive((prev) => !prev);
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          boxShadow: `0 2px 0 ${clr}, 0 4px 0 ${clr}, 0 6px 0 ${clr}`,
+        }}
+      >
+        <p
+          style={{
+            width: "100%",
+            textAlign: "justify",
+            textAlignLast: "center",
+            fontWeight: "350",
+            fontSize: "1rem",
           }}
         >
-          {!isActive ? (
-            <FontAwesomeIcon icon={faPlus} size="2x" />
-          ) : (
-            <FontAwesomeIcon icon={faMinus} size="2x" />
-          )}
-        </div>
+          {val.ans}
+        </p>
 
-        <div style={{ maxWidth: "calc(100% - 62px)" }}>
-          <p
-            className="display"
-            ref={displayRef}
-            style={{
-              color: clr,
-              backgroundColor: strokeClr,
-              borderRadius: "24px",
-              margin: 0,
-              overflow: "scroll",
-              width: "100%",
-            }}
-          >
-            {val}
-          </p>
-        </div>
+        <button
+          style={{
+            margin: "var(--padding)",
+            padding: '2px var(--padding) 2px var(--padding)',
+            borderRadius: '24px',
+            backgroundColor: '#000',
+            border: '1px solid #f5f5f5',
+            color: '#f5f5f5'
+          }}
+
+          onClick={()=>{
+            setIsActive(true);
+          }}
+        >
+          View Analysis
+        </button>
       </div>
     </>
   );

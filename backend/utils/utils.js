@@ -98,11 +98,11 @@ function statAnalysis(decip) {
 
   //Std Deviation
   Object.keys(freq).map((key) => {
-    std += (distribution[key] - mean)**2;
+    std += (distribution[key] - mean) ** 2;
     freq_total += freq[key];
   });
 
-  std = (std / freq_total)**0.5;
+  std = (std / freq_total) ** 0.5;
 
   return {
     freq: freq,
@@ -123,11 +123,17 @@ module.exports = function decrypt(cip, det) {
     curr_stat
       ? res_rec_no.push({
           ans: curr,
-          quantities: statAnalysis(curr),
+          quantities: {
+            ...statAnalysis(curr),
+            shift: i,
+          },
         })
       : res_rec.push({
           ans: curr,
-          quantities: statAnalysis(curr),
+          quantities: {
+            ...statAnalysis(curr),
+            shift: i,
+          },
         });
   }
   return {

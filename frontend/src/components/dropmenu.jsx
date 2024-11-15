@@ -16,7 +16,7 @@ export default function DropMenu(props) {
           backgroundColor: "#232526",
           borderRadius: "24px",
           border: "1px solid #f5f5f5",
-          height: "400px",
+          height: "600px",
           overflowY: "scroll",
           boxShadow:
             "4px 4px 0 black, 6px 6px 0 rgba(0, 0, 0, 0.8), 8px 8px 0 rgba(0, 0, 0, 0.6)",
@@ -45,7 +45,14 @@ export default function DropMenu(props) {
             alignItems: "flex-start",
           }}
         >
-          <div style={{ display: "block", width: "100%" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
             {items[0].length || items[1].length ? (
               <h5
                 style={{
@@ -64,15 +71,23 @@ export default function DropMenu(props) {
               return (
                 <DropDown
                   val={item}
-                  clr="#f5f5f5"
+                  clr="#2b9b06"
                   strokeClr="#2b9b06"
+                  status='correct'
                   key={uuid()}
                 />
               );
             })}
           </div>
 
-          <div style={{ display: "block", width: "100%" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
             {items[1].length || items[0].length ? (
               <h5
                 style={{
@@ -93,8 +108,9 @@ export default function DropMenu(props) {
               return (
                 <DropDown
                   val={item}
-                  clr="#ffffff"
+                  clr="#9b0606"
                   strokeClr="#9b0606"
+                  status='incorrect'
                   key={uuid()}
                 />
               );

@@ -1,6 +1,7 @@
 *{
   box-sizing: border-box;
   font-family: "Noto Emoji", sans-serif;
+  scrollbar-width: none;
 }
 
 
@@ -234,4 +235,15 @@ section {
   margin: 0;
   z-index: 0;
   height: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  font-family: 'Courier New', monospace !important;
+  letter-spacing: normal;
+  word-spacing: normal;
+
 }
