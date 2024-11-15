@@ -32,7 +32,7 @@ export default function Home() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "url(/image.png)",
+          background: "url(/hero_bg.png)",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           paddingBlock: "calc(var(--padding)*7)",
@@ -115,8 +115,6 @@ export default function Home() {
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: "transparent",
-                // borderRadius: "24px",
-                // border: "1px solid #f5f5f5",
                 position: "relative",
                 display: "flex",
               }}
@@ -131,6 +129,7 @@ export default function Home() {
                   textAlign: "center",
                   fontFamily: '"Orbitron", sans-serif',
                   fontSize: "3rem",
+                  margin: "40px",
                 }}
                 className="container"
               >
@@ -141,9 +140,8 @@ export default function Home() {
                 style={{
                   height: "50%",
                   overflowY: "scroll",
-                  position: "absolute",
                   textAlign: "justify",
-                  textAlignLast: 'center',
+                  textAlignLast: "center",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -166,24 +164,24 @@ export default function Home() {
                     alignItems: "center",
                   }}
                 >
-                  <pre
+                  <i
                     style={{
                       fontFamily: "inherit",
                       fontSize: "inherit",
                     }}
                   >
                     Caesar
-                  </pre>
-                  <pre
+                  </i>
+                  <i>-</i>
+                  <i
                     style={{
                       fontFamily: "inherit",
                       fontSize: "inherit",
                       color: "#00aada",
                     }}
                   >
-                    {" "}
                     Cipher
-                  </pre>
+                  </i>
                 </b>
                 to uncover any relevant insights that can inform and strengthen
                 our security measures.
@@ -191,10 +189,9 @@ export default function Home() {
 
               <Link
                 style={{
-                  position: "absolute",
-                  bottom: "var(--padding)",
-                  right: "var(--padding)",
+                  width: "100%",
                 }}
+                id={"start-link"}
                 to="/decoder"
               >
                 <button
@@ -205,9 +202,11 @@ export default function Home() {
                     border: "1px solid #f5f5f5",
                     padding: "var(--padding)",
                     borderRadius: "24px",
+                    width: "100%",
+                    fontFamily: '"Orbitron", serif',
                   }}
                 >
-                  Begin &rarr;
+                  Begin Your Decoding Journey
                 </button>
               </Link>
             </div>
@@ -217,11 +216,11 @@ export default function Home() {
       <section
         style={{
           borderRadius: "24px",
-          background: "url(/polygrid.svg)",
+          backgroundImage: 'url(/service_bg.png)',
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          backgroundSize: "cover",
-          marginTop: 'var(--padding)'
+          backgroundSize: "contain",
+          marginTop: "var(--padding)",
         }}
         id="products"
       >
@@ -229,22 +228,25 @@ export default function Home() {
           style={{
             width: "100%",
             height: "100%",
-            backdropFilter: "brightness(60%)",
+            backdropFilter: "url('/polygrid.svg')",
             paddingBlock: "calc(var(--padding)*7)",
             borderRadius: "24px",
           }}
         >
-          <h1
+          <h2
             style={{
-              fontSize: "3rem",
-              margin: "0 0 calc(var(--padding)*2) 0",
+              position: "absolute",
+              top: "var(--padding)",
+              width: "100%",
+              fontWeight: "bold",
+              textAlign: "center",
               fontFamily: '"Orbitron", sans-serif',
-              WebkitTextStroke: "2px #000",
-              textShadow: "2px 0 0 #000, 4px 0 0 #000, 6px 0 0 #000",
+              fontSize: "3rem",
             }}
+            className="container"
           >
             Services
-          </h1>
+          </h2>
           <div className="container card-grid">
             <Product
               content="Try out our API to build anything for your custom needs"

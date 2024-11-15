@@ -92,13 +92,35 @@
   font-family: inherit;
 }
 
+@keyframes buttonLoad{
+  from {
+    background-image: linear-gradient(to left, #fff 100%, transparent 100%);
+    background-size: 0% 100%;
+  } to {
+    background-image: linear-gradient(to left, #fff 0%, #fff 100%);
+    background-size: 100% 100%;
+  }
+}
+
+#start-link{
+  transform: none !important;
+}
+
 #start {
   background-color: #000;
+  background-image: linear-gradient(to left, #fff 100%, transparent 100%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  transition: all 1s ease-in-out;
   color: #f5f5f5;
+  transform: none !important;
 }
 
 #start:hover {
-  background-color: #f5f5f5;
+  /* animation: buttonLoad 1.2s linear 0ms 1 forwards;
+  animation-fill-mode: both; */
+  background-image: linear-gradient(to left, #fff 0%, #fff 100%);
+  background-size: 100% 100%;
   color: #000;
 }
 
