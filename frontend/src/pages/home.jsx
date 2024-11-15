@@ -216,10 +216,10 @@ export default function Home() {
       <section
         style={{
           borderRadius: "24px",
-          backgroundImage: 'url(/service_bg.png)',
+          backgroundImage: 'url(/services_bg.jpeg)',
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          backgroundSize: "contain",
+          backgroundSize: "cover",
           marginTop: "var(--padding)",
         }}
         id="products"
@@ -228,20 +228,19 @@ export default function Home() {
           style={{
             width: "100%",
             height: "100%",
-            backdropFilter: "url('/polygrid.svg')",
             paddingBlock: "calc(var(--padding)*7)",
             borderRadius: "24px",
+            backdropFilter: 'brightness(60%)'
           }}
         >
           <h2
             style={{
-              position: "absolute",
-              top: "var(--padding)",
               width: "100%",
               fontWeight: "bold",
               textAlign: "center",
               fontFamily: '"Orbitron", sans-serif',
               fontSize: "3rem",
+              margin: '24px'
             }}
             className="container"
           >
