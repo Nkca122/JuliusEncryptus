@@ -38,17 +38,17 @@ app.post("/", (req, res, next) => {
   }
 });
 
-app.get("*", (req, res, next) => {
-  return next(
-    new ExpressError(process.env.ERR_BAD_METHOD, "ERR_BAD_METHOD", 400)
-  );
-});
+// app.get("*", (req, res, next) => {
+//   return next(
+//     new ExpressError(process.env.ERR_BAD_METHOD, "ERR_BAD_METHOD", 400)
+//   );
+// });
 
-app.post("*", (req, res, next) => {
-  return next(
-    new ExpressError(process.env.ERR_BAD_METHOD, "ERR_BAD_METHOD", 400)
-  );
-});
+// app.post("*", (req, res, next) => {
+//   return next(
+//     new ExpressError(process.env.ERR_BAD_METHOD, "ERR_BAD_METHOD", 400)
+//   );
+// });
 
 app.use((err, req, res, next) => {
   console.log(err);
