@@ -18,5 +18,9 @@ module.exports = function decrypt(cip, det) {
     let curr_stat = det.default(curr);
     curr_stat ? res_rec_no.push(curr) : res_rec.push(curr);
   }
-  return [res_rec, res_rec_no];
+  return {
+    corr: res_rec,
+    incorr: res_rec_no,
+    all_shifts: [...res_rec, ...res_rec_no]
+  };
 };
