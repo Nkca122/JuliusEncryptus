@@ -198,8 +198,9 @@ export default function Decoder() {
           alignItems: "center",
           justifyContent: "center",
           background:
-            "linear-gradient(90deg, #776b59  1px, transparent 1px) 0 0, linear-gradient(180deg, #776b59  1px, transparent 1px) 0 0, #1d1f20",
-          backgroundSize: "60px 60px",
+            "linear-gradient(90deg, #776b59  1px, transparent 1px) 0 0, linear-gradient(180deg, #776b59  1px, transparent 1px) 0 0, url('image copy.png'), #1d1f20",
+          backgroundSize: "60px 60px, 60px 60px, cover",
+          backgroundRepeat: 'repeat. repeat, no-repeat',
           border: "1px solid #3C3C3C",
           boxShadow:
             "4px 4px 0 black, 6px 6px 0 rgba(0, 0, 0, 0.8), 8px 8px 0 rgba(0, 0, 0, 0.6)",
@@ -319,7 +320,6 @@ export default function Decoder() {
                       width: "fit-content",
                       position: "absolute",
                       bottom: "var(--padding)",
-                      
                     }}
                   >
                     {!fetch ? (

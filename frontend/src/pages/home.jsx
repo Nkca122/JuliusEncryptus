@@ -2,6 +2,14 @@ import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 import Card from "../components/card";
 import { useEffect, useState } from "react";
+import Product from "../components/product";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faScrewdriverWrench,
+  faDownload,
+} from "@fortawesome/free-solid-svg-icons";
+
+import ParticleBackground from "../components/particles";
 
 const style = {
   gridItem: {
@@ -13,6 +21,7 @@ const style = {
     flexDirection: "column",
   },
 };
+
 export default function Home() {
   return (
     <>
@@ -23,151 +32,267 @@ export default function Home() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background:
-            "linear-gradient(to right, #3c3c3c 1px, transparent 1px) 0 0, linear-gradient(to bottom, #3c3c3c 1px, transparent 1px) 0 0, #000",
-          backgroundSize: "120px 120px, 120px 120px",
-          backgroundRepeat: "repeat, repeat",
+          background: "url(/image.png)",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           paddingBlock: "calc(var(--padding)*7)",
+          position: "relative",
+          zIndex: 1,
+          overflow: "hidden",
         }}
       >
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, 400px)",
-            justifyContent: "center",
-            gap: "1em",
+            position: "absolute",
+            zIndex: 0,
             width: "100%",
             height: "100%",
+            backdropFilter: "brightness(60%) grayscale(60%)",
+            background:
+              "linear-gradient(to right, #3c3c3c 1px, transparent 1px) 0 0, linear-gradient(to bottom, #3c3c3c 1px, transparent 1px) 0 0",
+            backgroundSize: "360px 360px, 360px 360px",
+            backgroundRepeat: "repeat, repeat",
           }}
-          className="container"
         >
-          <div style={{ ...style.gridItem, position: "relative" }}>
-            <img
-              src="/logo.png"
-              alt=""
-              style={{
-                width: "100%",
-              }}
-            />
-
-            <h1>
-              <span
-                style={{
-                  fontSize: "3.5rem",
-                  fontFamily: "Doto",
-                  textAlign: "center",
-                  color: "#4AF626",
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  height: "156px",
-                }}
-                className="typewriter"
-              >
-                <Typewriter
-                  words={["Julius Encryptus"]}
-                  loop
-                  cursor
-                  cursorStyle="<"
-                  typeSpeed={100}
-                  deleteSpeed={150}
-                  delaySpeed={1000}
-                />
-              </span>
-            </h1>
-          </div>
+          <ParticleBackground />
+        </div>
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            zIndex: 2,
+          }}
+        >
           <div
             style={{
-              ...style.gridItem,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, 450px)",
               justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "#000",
-              borderRadius: "24px",
-              border: "1px solid #f5f5f5",
-              position: "relative",
-              display: "flex",
+              gap: "8em",
+              width: "100%",
+              height: "100%",
             }}
             className="container"
           >
-            <h2
-              style={{
-                position: "absolute",
-                top: "var(--padding)",
-                width: "100%",
-                fontWeight: "bold",
-                textAlign: "left",
-                fontSize: "2rem",
-                fontFamily: '"Orbitron", sans-serif',
-              }}
-              className="container"
-            >
-              Our Mission
-            </h2>
-
-            <p
-              style={{
-                height: "50%",
-                overflowY: "scroll",
-                position: "absolute",
-                textAlign: "center",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "column",
-              }}
-              className="container"
-            >
-              Our mission is to decrypt and analyze messages encrypted by the
-              use of a
-              <b
+            <div style={{ ...style.gridItem, position: "relative" }}>
+              <img
+                src="/logo.png"
+                alt=""
                 style={{
                   width: "100%",
-                  textAlign: "center",
                 }}
-              >
-                Caesar cipher
-              </b>
-              to uncover any relevant insights that can inform and strengthen
-              our security measures.
-            </p>
+              />
 
-            <Link
+              <h1>
+                <span
+                  style={{
+                    fontSize: "3.5rem",
+                    fontFamily: "Doto",
+                    textAlign: "center",
+                    color: "#4AF626",
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    height: "156px",
+                  }}
+                  className="typewriter"
+                >
+                  <Typewriter
+                    words={["Julius Encryptus"]}
+                    loop
+                    cursor
+                    cursorStyle="<"
+                    typeSpeed={100}
+                    deleteSpeed={150}
+                    delaySpeed={1000}
+                  />
+                </span>
+              </h1>
+            </div>
+            <div
               style={{
-                position: "absolute",
-                bottom: "var(--padding)",
-                right: "var(--padding)",
+                ...style.gridItem,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "transparent",
+                // borderRadius: "24px",
+                // border: "1px solid #f5f5f5",
+                position: "relative",
+                display: "flex",
               }}
-              to="/decoder"
+              className="container"
             >
-              <button
-                id="start"
+              <h2
                 style={{
-                  fontSize: "1rem",
+                  position: "absolute",
+                  top: "var(--padding)",
+                  width: "100%",
                   fontWeight: "bold",
-                  border: "1px solid #f5f5f5",
-                  padding: "var(--padding)",
-                  borderRadius: "24px",
+                  textAlign: "center",
+                  fontFamily: '"Orbitron", sans-serif',
+                  fontSize: "3rem",
+                }}
+                className="container"
+              >
+                Our Mission
+              </h2>
+
+              <p
+                style={{
+                  height: "50%",
+                  overflowY: "scroll",
+                  position: "absolute",
+                  textAlign: "justify",
+                  textAlignLast: 'center',
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  fontSize: "1.2rem",
+                  paddingInline: "var(--padding)",
                 }}
               >
-                Begin
-              </button>
-            </Link>
+                Our mission is to decrypt and analyze messages encrypted by the
+                use of a
+                <b
+                  style={{
+                    textAlign: "center",
+                    fontSize: "2rem",
+                    color: "#4af626",
+                    fontStyle: "italic",
+                    fontFamily: '"Orbitron", serif',
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <pre
+                    style={{
+                      fontFamily: "inherit",
+                      fontSize: "inherit",
+                    }}
+                  >
+                    Caesar
+                  </pre>
+                  <pre
+                    style={{
+                      fontFamily: "inherit",
+                      fontSize: "inherit",
+                      color: "#00aada",
+                    }}
+                  >
+                    {" "}
+                    Cipher
+                  </pre>
+                </b>
+                to uncover any relevant insights that can inform and strengthen
+                our security measures.
+              </p>
+
+              <Link
+                style={{
+                  position: "absolute",
+                  bottom: "var(--padding)",
+                  right: "var(--padding)",
+                }}
+                to="/decoder"
+              >
+                <button
+                  id="start"
+                  style={{
+                    fontSize: "1rem",
+                    fontWeight: "bold",
+                    border: "1px solid #f5f5f5",
+                    padding: "var(--padding)",
+                    borderRadius: "24px",
+                  }}
+                >
+                  Begin &rarr;
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
       <section
         style={{
-          border: "1px solid #3c3c3c",
+          borderRadius: "24px",
+          background: "url(/polygrid.svg)",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          marginTop: 'var(--padding)'
+        }}
+        id="products"
+      >
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            backdropFilter: "brightness(60%)",
+            paddingBlock: "calc(var(--padding)*7)",
+            borderRadius: "24px",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "3rem",
+              margin: "0 0 calc(var(--padding)*2) 0",
+              fontFamily: '"Orbitron", sans-serif',
+              WebkitTextStroke: "2px #000",
+              textShadow: "2px 0 0 #000, 4px 0 0 #000, 6px 0 0 #000",
+            }}
+          >
+            Services
+          </h1>
+          <div className="container card-grid">
+            <Product
+              content="Try out our API to build anything for your custom needs"
+              icon={
+                <FontAwesomeIcon
+                  icon={faScrewdriverWrench}
+                  size="5x"
+                  color={"#242424"}
+                />
+              }
+            />
+
+            <Product
+              content="Try out our API to build anything for your custom needs"
+              icon={
+                <FontAwesomeIcon
+                  icon={faDownload}
+                  size="5x"
+                  color={"#242424"}
+                />
+              }
+            />
+
+            <Product
+              content="Try out our API to build anything for your custom needs"
+              icon={
+                <FontAwesomeIcon
+                  icon={faDownload}
+                  size="5x"
+                  color={"#242424"}
+                />
+              }
+            />
+          </div>
+        </div>
+      </section>
+      <section
+        style={{
           background:
-            "linear-gradient(to right, #a89c8a 1px, transparent 1px) 0 0, linear-gradient(to bottom, #a89c8a 1px, transparent 1px) 0 0, #242424",
+            "linear-gradient(to right, #3c3c3c 1px, transparent 1px) 0 0, linear-gradient(to bottom, #3c3c3c 1px, transparent 1px) 0 0",
           backgroundSize: "120px 120px, 120px 120px",
           backgroundRepeat: "repeat, repeat",
           marginTop: "var(--padding)",
           paddingBlock: "calc(var(--padding)*7)",
+          borderRadius: "24px",
         }}
         id="about"
       >
-
         <div
           style={{
             width: "100%",
@@ -176,75 +301,48 @@ export default function Home() {
             alignItems: "center",
           }}
         >
-          <span
+          <h1
             style={{
               fontSize: "3rem",
-              padding: "var(--padding)",
-              margin: "0 0 var(--padding) 0",
-              backgroundColor: "#242424",
-              border: "0.1px solid #f5f5f5",
-              borderRadius: "3rem",
+              margin: "0 0 calc(var(--padding)*2) 0",
               fontFamily: '"Orbitron", sans-serif',
-              boxShadow: "2px 2px 0 #000, 4px 4px 0 #000, 6px 6px 0 #000",
-              height: "106.5px",
+              WebkitTextStroke: "2px #000",
+              textShadow: "2px 0 0 #000, 4px 0 0 #000, 6px 0 0 #000",
             }}
-            className="typewriter"
           >
-            <Typewriter
-              words={["About Us", "Our Team"]}
-              loop
-              cursor
-              cursorStyle=""
-              typeSpeed={100}
-              deleteSpeed={150}
-              delaySpeed={1000}
-            />
-          </span>
+            Our Team
+          </h1>
         </div>
 
         <div className="card-grid">
           <Card
             heading="Team Lead"
             description="Satyam Kesarwani"
-            img='/satyam.png'
+            img="/satyam.png"
             link="https://www.linkedin.com/in/satyam-kumar-kesarwani-763b61293/"
           />
 
           <Card
             heading="Lead Developer"
             description="Nikunj Chauhan"
-            img='/nikunj.png'
+            img="/nikunj.png"
             link="https://github.com/Nkca122"
           />
 
           <Card
             heading="Lead Tester"
             description="Sarafaraj Nasardi"
-            img ='/sarafaraj.png'
+            img="/sarafaraj.png"
             link="https://www.linkedin.com/in/sarafaraj-nasardi-7722b31b3/"
           />
 
           <Card
             heading="Lead Designer"
             description="Vidhi Mittal"
-            img='/vidhi.png'
+            img="/vidhi.png"
             link="https://www.linkedin.com/in/vidhi-mittal04/"
           />
         </div>
-        {/* 
-        <div className="bottom-triangle">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M1200 0L0 0 598.97 114.72 1200 0z"
-              className="shape-fill"
-            ></path>
-          </svg>
-        </div> */}
       </section>
     </>
   );

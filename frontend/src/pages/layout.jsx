@@ -28,6 +28,8 @@ export default function Layout() {
           border: "1px solid #3C3C3C",
           boxShadow:
             "4px 4px 0 black, 6px 6px 0 rgba(0, 0, 0, 0.8), 8px 8px 0 rgba(0, 0, 0, 0.6)",
+          borderRadius: "24px",
+          padding: '16px'
         }}
       >
         <div
@@ -37,13 +39,13 @@ export default function Layout() {
             top: "calc(2*var(--padding))",
             height: "2rem",
             width: "2rem",
-            zIndex: 1,
+            zIndex: 20,
             border: "1px solid #f5f5f5",
             borderRadius: "50%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: '#f5f5f5'
+            backgroundColor: "#f5f5f5",
           }}
         >
           <button
@@ -98,7 +100,7 @@ export default function Layout() {
             position: "absolute",
             right: "calc(2*var(--padding))",
             top: "calc(2*var(--padding))",
-            zIndex: 1,
+            zIndex: 10,
           }}
         >
           <FontAwesomeIcon icon={faCircleInfo} size="2x" />
