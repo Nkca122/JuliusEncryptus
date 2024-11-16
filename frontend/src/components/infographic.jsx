@@ -105,7 +105,6 @@ export default function Infograph(props) {
   }, []);
 
   useEffect(() => {
-    console.log(data.quantities.freq);
     let ctx = document.getElementById("english").getContext("2d");
     new Chart(ctx, {
       type: "bar",

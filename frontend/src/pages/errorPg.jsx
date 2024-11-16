@@ -1,13 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRotateRight, faKeyboard } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
-export default function Error(props) {
+export default function ErrorPage(props) {
   let err = props.err;
-  useEffect(() => {
-    window.addEventListener("keypress", (e) => {
-      window.location.reload();
-    });
-  }, []);
   return (
     <>
       <div
@@ -37,28 +29,12 @@ export default function Error(props) {
             border: "1px solid red",
           }}
         >
-          <button
-            onClick={() => {
-              window.location.reload();
-            }}
-            style={{
-              position: "absolute",
-              top: "calc(10% + var(--padding))",
-              right: "calc(10% + var(--padding))",
-              background: "none",
-              border: "none",
-              color: "red",
-              fontSize: "2rem",
-            }}
-          >
-            <FontAwesomeIcon icon={faRotateRight} />
-          </button>
           <h1
             style={{
               fontSize: "3rem",
               WebkitTextStroke: "1px red",
               margin: 0,
-              fontFamily: "'Courier New', monospace "
+              fontFamily: "'Courier New', monospace ",
             }}
           >
             Status: {err.status || 400}
@@ -190,10 +166,6 @@ l-29 -44 40 -40 39 -41 0 -177 0 -178 -545 0 -545 0 0 179 0 178 25 19 c14 10
             }}
           >
             {err.code} : {err.msg}
-          </p>
-          <p>
-            Press Any Key on the <FontAwesomeIcon icon={faKeyboard} />
-            <b> to Reload</b>
           </p>
         </div>
       </div>
