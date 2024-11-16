@@ -37,6 +37,20 @@ function App() {
                 }
               />
             </Route>
+            <Route path="*" element={<Layout />}>
+              <Route
+                path="*"
+                element={
+                  <ErrorPage
+                    err={{
+                      status: 404,
+                      code: "ERR_BAD_ROUTE",
+                      msg: "Page Not Found",
+                    }}
+                  />
+                }
+              />
+            </Route>
           </Routes>
         </Router>
       ) : null}
