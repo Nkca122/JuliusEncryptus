@@ -125,6 +125,22 @@
   color: #000;
 }
 
+#decoder-btn {
+  background-color: #000;
+  background-image: linear-gradient(to bottom, #fff 100%, transparent 100%);
+  background-size: 100% 0%;
+  background-repeat: no-repeat;
+  transition: all 1s ease-in-out;
+  color: #f5f5f5;
+  transform: none !important;
+}
+
+#decoder-btn:hover{
+  background-image: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  background-size: 100% 100%;
+  color: #000;
+}
+
 
 #preloader {
   width: 100vw;
@@ -245,5 +261,13 @@ td {
   font-family: 'Courier New', monospace !important;
   letter-spacing: normal;
   word-spacing: normal;
+}
 
+.product {
+  transition: all 0.25s ease-in-out;
+}
+
+.product:hover {
+  position: relative; z-index: 2;
+  transform: scale(1.05);
 }

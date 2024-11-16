@@ -6,10 +6,13 @@ import Product from "../components/product";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faScrewdriverWrench,
-  faDownload,
+  faGlobe,
+  faMobile,
+  faPuzzlePiece,
 } from "@fortawesome/free-solid-svg-icons";
 
 import ParticleBackground from "../components/particles";
+import { HashLink } from "react-router-hash-link";
 
 const style = {
   gridItem: {
@@ -187,12 +190,12 @@ export default function Home() {
                 our security measures.
               </p>
 
-              <Link
+              <HashLink
                 style={{
                   width: "100%",
                 }}
                 id={"start-link"}
-                to="/decoder"
+                to="/#products"
               >
                 <button
                   id="start"
@@ -208,7 +211,7 @@ export default function Home() {
                 >
                   Begin Your Decoding Journey
                 </button>
-              </Link>
+              </HashLink>
             </div>
           </div>
         </div>
@@ -216,7 +219,7 @@ export default function Home() {
       <section
         style={{
           borderRadius: "24px",
-          backgroundImage: 'url(/services_bg.jpeg)',
+          backgroundImage: "url(/services_bg.jpeg)",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -230,55 +233,135 @@ export default function Home() {
             height: "100%",
             paddingBlock: "calc(var(--padding)*7)",
             borderRadius: "24px",
-            backdropFilter: 'brightness(60%)'
+            backdropFilter: "brightness(30%)",
           }}
         >
-          <h2
+          <div
             style={{
-              width: "100%",
-              fontWeight: "bold",
-              textAlign: "center",
-              fontFamily: '"Orbitron", sans-serif',
-              fontSize: "3rem",
-              margin: '24px'
+              display: "grid",
+              gridTemplateColumns:
+                "repeat(auto-fit, calc(286px + 1em + 286px + 1em))",
+              gap: "1em",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-            className="container"
           >
-            Services
-          </h2>
-          <div className="container card-grid">
-            <Product
-              content="Try out our API to build anything for your custom needs"
-              icon={
-                <FontAwesomeIcon
-                  icon={faScrewdriverWrench}
-                  size="5x"
-                  color={"#242424"}
-                />
-              }
-            />
+            <div style={{ width: "100%" }} className="card-grid">
+              <Product
+                content="Try out our API to build anything for your custom needs"
+                icon={
+                  <FontAwesomeIcon
+                    icon={faScrewdriverWrench}
+                    size="5x"
+                    color={"#242424"}
+                  />
+                }
+                link={`${import.meta.env.VITE_api_link}`}
+              />
 
-            <Product
-              content="Try out our API to build anything for your custom needs"
-              icon={
-                <FontAwesomeIcon
-                  icon={faDownload}
-                  size="5x"
-                  color={"#242424"}
-                />
-              }
-            />
+              <Product
+                content="Use our cross-browser extension to prevent any shifts in your browsing journey"
+                icon={
+                  <FontAwesomeIcon icon={faGlobe} size="5x" color={"#242424"} />
+                }
+                link={`${import.meta.env.VITE_extension_link}`}
+              />
 
-            <Product
-              content="Try out our API to build anything for your custom needs"
-              icon={
-                <FontAwesomeIcon
-                  icon={faDownload}
-                  size="5x"
-                  color={"#242424"}
-                />
-              }
-            />
+              <Product
+                content="Want to decode on the move ? Use our mobile app during your cracking journeys"
+                icon={
+                  <FontAwesomeIcon
+                    icon={faMobile}
+                    size="5x"
+                    color={"#242424"}
+                  />
+                }
+                link={`${import.meta.env.VITE_app_link}`}
+              />
+
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Link
+                  style={{
+                    width: "80%",
+                    aspectRatio: "1/1",
+                    borderRadius: "24px",
+                    backgroundColor: "#000",
+                    border: "1px solid #f5f5f5",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    fontSize: "1.2rem",
+                    fontWeight: "700",
+                    flexDirection: "column",
+                    fontFamily: "'Monospace', serif",
+                  }}
+                  className="container"
+                  id="decoder-btn"
+                  to='/decoder'
+                >
+                  <b
+                    style={{
+                      display: "block",
+                    }}
+                  >
+                    Online Decoder
+                  </b>
+                  <FontAwesomeIcon icon={faPuzzlePiece} size="2x" />
+                </Link>
+              </div>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "#f5f5f5",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                color: "#000",
+                borderRadius: "24px",
+                boxShadow: "2px 0 0 #000, 4px 0 0 #000, 6px 0 0 #000",
+                border: "5px solid #000",
+              }}
+            >
+              <h2
+                style={{
+                  width: "100%",
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  fontFamily: '"Orbitron", sans-serif',
+                  fontSize: "3rem",
+                  margin: "24px",
+                }}
+                className="container"
+              >
+                Services
+              </h2>
+
+              <p
+                style={{
+                  fontSize: "1.2rem",
+                }}
+              >
+                Try out the services provided by our project{" "}
+                <b
+                  style={{
+                    display: "block",
+                    color: "red",
+                  }}
+                >
+                  ❤️
+                </b>
+              </p>
+            </div>
           </div>
         </div>
       </section>

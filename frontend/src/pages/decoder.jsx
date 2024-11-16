@@ -26,7 +26,6 @@ const style = {
 export default function Decoder() {
   const [text, setText] = useState("");
   const [response, setResponse] = useState(null);
-  const [displayResponse, setDisplayResponse] = useState(null);
   const [err, setErr] = useState(null);
   const [fetch, setFetch] = useState(false);
 
@@ -147,7 +146,7 @@ export default function Decoder() {
                       height: "600px",
                       backgroundColor: "transparent",
                       border: "none",
-                      padding: "var(--padding)",
+                      padding: "calc(var(--padding)*2)",
                       color: "#f5f5f5",
                       fontSize: "1rem",
                       fontWeight: 900,

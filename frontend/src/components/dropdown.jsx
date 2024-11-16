@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark} from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
 import Infograph from "./infographic";
 
@@ -15,19 +15,28 @@ export default function DropDown(props) {
 
   return (
     <>
-    {isActive ? <Infograph data ={val} status={status}/> : null}
-    {isActive ? <button style={{
-      position: 'fixed',
-      top: 'calc(var(--padding)*2 + 5%)',
-      right: 'calc(var(--padding)*2 + 5%)',
-      zIndex: 22,
-      background: 'none', 
-      border: 'none',
-    }} onClick={()=>{
-      setIsActive(false);
-    }}>
-      <FontAwesomeIcon icon={faXmark} size={'4x'} color={status == 'correct' ? 'green' : 'red'}/>
-    </button>: null}
+      {isActive ? <Infograph data={val} status={status} /> : null}
+      {isActive ? (
+        <button
+          style={{
+            position: "fixed",
+            top: "calc(var(--padding)*2 + 5%)",
+            right: "calc(var(--padding)*2 + 5%)",
+            zIndex: 22,
+            background: "none",
+            border: "none",
+          }}
+          onClick={() => {
+            setIsActive(false);
+          }}
+        >
+          <FontAwesomeIcon
+            icon={faXmark}
+            size={"4x"}
+            color={status == "correct" ? "green" : "red"}
+          />
+        </button>
+      ) : null}
       <div
         style={{
           width: "95%",
@@ -57,22 +66,31 @@ export default function DropDown(props) {
           {val.ans}
         </p>
 
-        <button
+        <div
           style={{
-            margin: "var(--padding)",
-            padding: '2px var(--padding) 2px var(--padding)',
-            borderRadius: '24px',
-            backgroundColor: '#000',
-            border: '1px solid #f5f5f5',
-            color: '#f5f5f5'
-          }}
-
-          onClick={()=>{
-            setIsActive(true);
+            display: "flex",
+            width: "100%",
+            justifyContent: "flex-end",
+            alignItems: "center",
           }}
         >
-          View Analysis
-        </button>
+          <button
+            style={{
+              margin: "var(--padding)",
+              padding: "2px var(--padding) 2px var(--padding)",
+              borderRadius: "24px",
+              background: 'none',
+              border: 'none',
+              color: `${clr}`,
+              justifySelf: "end",
+            }}
+            onClick={() => {
+              setIsActive(true);
+            }}
+          >
+            View Analysis
+          </button>
+        </div>
       </div>
     </>
   );

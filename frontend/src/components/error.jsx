@@ -60,6 +60,7 @@ export default function Error(props) {
               fontSize: "3rem",
               WebkitTextStroke: "1px red",
               margin: 0,
+              fontFamily: "'Courier New', monospace "
             }}
           >
             Status: {err.status || 400}
@@ -194,7 +195,7 @@ l-29 -44 40 -40 39 -41 0 -177 0 -178 -545 0 -545 0 0 179 0 178 25 19 c14 10
           </p>
           <p>
             Press Any Key on the <FontAwesomeIcon icon={faKeyboard} />
-            <b>to Reload</b>
+            <b> to Reload</b>
           </p>
         </div>
       </div>

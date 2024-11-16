@@ -190,16 +190,13 @@ export default function Infograph(props) {
       >
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-            alignItems: "center",
+            display: 'block',
             width: "90%",
             height: "90%",
             backgroundColor: "#242424",
             borderRadius: "24px",
             border: `1px solid ${status == "correct" ? "green" : "red"}`,
-            overflow: "scroll",
+            overflowY: "scroll",
             padding: "calc(var(--padding)*2)",
           }}
         >
