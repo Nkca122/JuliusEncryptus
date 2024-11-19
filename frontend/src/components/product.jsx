@@ -4,7 +4,7 @@ export default function Product(props) {
   let link = props.link;
   return (
     <>
-      <a href={link} className="product">
+      <a href={link} className="product" target='main'>
         <div
           style={{
             position: "relative",
