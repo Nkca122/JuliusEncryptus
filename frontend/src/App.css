@@ -91,7 +91,7 @@
 }
 
 .typewriter span{
-  font-family: inherit;
+  font-family: inherit; font-size: inherit;
 }
 
 @keyframes buttonLoad{
