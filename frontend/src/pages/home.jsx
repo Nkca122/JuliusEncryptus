@@ -419,13 +419,7 @@ export default function Home() {
             img="/sarafaraj.png"
             link="https://www.linkedin.com/in/sarafaraj-nasardi-7722b31b3/"
           />
-
-          <Card
-            heading="Lead Designer"
-            description="Vidhi Mittal"
-            img="/vidhi.png"
-            link="https://www.linkedin.com/in/vidhi-mittal04/"
-          />
+          
         </div>
       </section>
     </>
